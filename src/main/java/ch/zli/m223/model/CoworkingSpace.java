@@ -1,5 +1,7 @@
 package ch.zli.m223.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @NamedQueries({
@@ -26,6 +30,10 @@ public class CoworkingSpace {
 
     @Column
     private String location;
+
+    // ? @JsonIgnoreProperties("CoworkingSpaces")
+    @Fetch(FetchMode.JOIN)
+    private Set<Booking> bookings;
 
     public Long getId() {
         return id;
@@ -49,6 +57,14 @@ public class CoworkingSpace {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Set<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
     }
      
 }

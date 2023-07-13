@@ -12,53 +12,42 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "ApplicationUser.findByEmail", query = "SELECT u FROM ApplicationUser u WHERE u.email = :email")
+  @NamedQuery(name = "ApplicationUser.findByID", query = "SELECT u FROM User u WHERE u.ID = :ID")
 })
 public class ApplicationUser {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Schema(readOnly = true)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(readOnly = true)
+    private Long id;
+    
+    @Column(nullable = false)
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
   
-  @Column(nullable = false, unique = true)
-  private String email;
+    public Long getId() {
+        return id;
+    }
 
-  @Column(nullable = false)
-  private String password;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  @Column
-  private String nickname;
+    public String getFirstName() {
+        return firstName;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public String getNickname() {
-    return nickname;
-  }
-
-  public void setNickname(String nickname) {
-    this.nickname = nickname;
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }  
 }

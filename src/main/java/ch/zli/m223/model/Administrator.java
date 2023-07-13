@@ -12,11 +12,11 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "User.findByID", query = "SELECT u FROM User u WHERE u.ID = :ID")
+    @NamedQuery(name = "ApplicationUser.findByID", query = "SELECT u FROM User u WHERE u.ID = :ID")
 })
-public class Administrator extends User {
+public class Administrator extends ApplicationUser {
   
-    @Column
+    @Column(nullable = false)
     private String username;
 
     @Column(nullable = false)
