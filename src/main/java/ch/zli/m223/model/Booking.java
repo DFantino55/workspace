@@ -17,7 +17,7 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "Booking.findByID", query = "SELECT b FROM User b WHERE b.ID = :ID")
+  @NamedQuery(name = "Booking.findByID", query = "SELECT b FROM Booking b WHERE b.id = :id")
 })
 public class Booking {
 
@@ -28,7 +28,7 @@ public class Booking {
     
     @ManyToOne(optional = false)
     @Fetch(FetchMode.JOIN)
-    private Member member;
+    private ApplicationUser applicationUser;
 
     @ManyToOne(optional = false)
     @Fetch(FetchMode.JOIN)
@@ -51,12 +51,12 @@ public class Booking {
         this.id = id;
     }
 
-    public Member getMember() {
-        return member;
+    public ApplicationUser getApplicationUser() {
+        return applicationUser;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setApplicationUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
     }
 
     public CoworkingSpace getCoworkingSpace() {

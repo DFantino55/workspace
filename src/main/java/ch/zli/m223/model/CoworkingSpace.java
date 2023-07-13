@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.hibernate.annotations.Fetch;
@@ -16,7 +17,7 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "CoworkingSpace.findByID", query = "SELECT c FROM CoworkingSpace c WHERE c.ID = :ID")
+  @NamedQuery(name = "CoworkingSpace.findByID", query = "SELECT c FROM CoworkingSpace c WHERE c.id = :id")
 })
 public class CoworkingSpace {
 
@@ -32,6 +33,7 @@ public class CoworkingSpace {
     private String location;
 
     // ? @JsonIgnoreProperties("CoworkingSpaces")
+    @OneToMany
     @Fetch(FetchMode.JOIN)
     private Set<Booking> bookings;
 
