@@ -17,7 +17,7 @@ import org.hibernate.annotations.FetchMode;
 
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "ApplicationUser.findByID", query = "SELECT u FROM ApplicationUser u WHERE u.id = :id")
+  @NamedQuery(name = "ApplicationUser.findByEmail", query = "SELECT u FROM ApplicationUser u WHERE u.email = :email")
 })
 public class ApplicationUser {
 

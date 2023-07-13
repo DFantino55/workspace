@@ -23,7 +23,7 @@ public class SessionService {
   public Response authenticate(Credential credential) {
     Optional<ApplicationUser> principal = applicationUserService.findByEmail(credential.getEmail());
 
-    /* 
+  
     try {
       if (principal.isPresent() && principal.get().getPassword().equals(credential.getPassword())) {
         String token = Jwt
@@ -41,7 +41,7 @@ public class SessionService {
     } catch (Exception e) {
       System.err.println("Couldn't validate password.");
     }
-    */
+
 
     return Response.status(Response.Status.FORBIDDEN).build();
   }

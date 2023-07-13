@@ -44,4 +44,12 @@ public class ApplicationUserService {
                 .getResultStream()
                 .findFirst();
     }
+
+    public Optional<ApplicationUser> findByID(int id) {
+        return entityManager
+                .createNamedQuery("ApplicationUser.findByID", ApplicationUser.class)
+                .setParameter("id", id)
+                .getResultStream()
+                .findFirst();
+    }
 }
