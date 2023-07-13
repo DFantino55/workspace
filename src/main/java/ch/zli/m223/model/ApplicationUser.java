@@ -49,7 +49,8 @@ public class ApplicationUser {
     @Fetch(FetchMode.JOIN)
     private Set<Booking> bookings;
 
-    
+    public ApplicationUser() {
+    }
 
     public ApplicationUser(String firstName, String lastName, String email, String username, String password,
             int status) {

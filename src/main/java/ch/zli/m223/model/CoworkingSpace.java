@@ -37,6 +37,9 @@ public class CoworkingSpace {
     @Fetch(FetchMode.JOIN)
     private Set<Booking> bookings;
 
+    public CoworkingSpace() {
+    }
+
     public CoworkingSpace(String name, String location) {
         this.name = name;
         this.location = location;

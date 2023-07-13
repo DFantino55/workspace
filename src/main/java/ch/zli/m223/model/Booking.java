@@ -43,7 +43,8 @@ public class Booking {
     @Column(nullable = false)
     private int status;
 
-    
+    public Booking() {
+    }
 
     public Booking(ApplicationUser applicationUser, CoworkingSpace coworkingSpace, LocalDateTime startDate,
             LocalDateTime endDate, int status) {
