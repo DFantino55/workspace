@@ -1,18 +1,21 @@
-# Übungsprojekt: Punch Clock
+# Projekt Workspace - CoWorkConnect
 
-Punch Clock ist ein Zeiterfassungssystem, welches mit Quarkus entwickelt wird.
+Workspace ist eine Webapplikation, die es Mitgliedern ermöglicht, die Angebote des Coworkingspaces digital zu erfassen und zu nutzen.
 
-## Erste Schritte
+## Änderungen gegenüber der Planung
 
-1. Erstelle eine Kopie (fork) von diesem Projekt.
-1. Stelle sicher, dass Docker installiert ist und läuft.
-1. Stelle sicher, dass Visual Studio Code und die Erweiterung Remote Container installiert ist.
-1. Klone (clone) das Projekt lokal, um damit arbeiten zu können.
-1. Öffne das Projekt mit Visual Studio Code.
-1. Öffne das Projekt im Entwicklungscontainer.
-1. Starte das Projekt mit dem Kommando `Quarkus: Debug current Quarkus Project`
-1. Probiere die Client-Applikation unter http://localhost:8080 aus.
-1. Schaue die API auf http://localhost:8080/q/swagger-ui/ an.
+Lorem Ipsum Dolor
+
+## TestDataService-Klasse
+
+Die Klasse 'TestDataService', im Pfad:'', ist verantwortlich für die Generierung von Testdaten. Sie enthält eine Methode namens 'generateTestData', die beim Start der Applikation im Entwicklungsmodus automatisch aufgerufen wird. In dieser Methode werden Instanzen von verschiedenen Modellen erstellt, die generierten Testdaten umfassen die folgenden Entitäten:
+- ApplicationUser
+- CoworkingSpace
+- Booking
+
+## Automatische Tests
+
+Die automatischen Tests können mit `./mvnw quarkus:test` ausgeführt werden. Für die automatischen Tests wird nicht die PostgreSQL-Datenbank verwendet, sondern eine H2-Datenbank, welche sich im Arbeitsspeicher während der Ausführung befindet.
 
 ## Datenbank
 
@@ -26,7 +29,3 @@ Die Daten werden in einer PostgreSQL-Datenbank gespeichert. In der Entwicklungsu
  - Maintenance database: `postgres`
  - Username: `postgres`
  - Password: `postgres`
-
-## Automatische Tests
-
-Die automatischen Tests können mit `./mvnw quarkus:test` ausgeführt werden. Für die automatischen Tests wird nicht die PostgreSQL-Datenbank verwendet, sondern eine H2-Datenbank, welche sich im Arbeitsspeicher während der Ausführung befindet.
