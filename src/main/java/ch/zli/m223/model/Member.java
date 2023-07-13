@@ -18,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @NamedQueries({
-    @NamedQuery(name = "ApplicationUser.findByID", query = "SELECT u FROM User u WHERE u.ID = :ID")
+    @NamedQuery(name = "ApplicationUser.findByID", query = "SELECT u FROM ApplicationUser u WHERE u.ID = :ID")
 })
 public class Member extends ApplicationUser {
 
