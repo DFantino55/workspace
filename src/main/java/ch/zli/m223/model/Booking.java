@@ -43,6 +43,17 @@ public class Booking {
     @Column(nullable = false)
     private int status;
 
+    
+
+    public Booking(ApplicationUser applicationUser, CoworkingSpace coworkingSpace, LocalDateTime startDate,
+            LocalDateTime endDate, int status) {
+        this.applicationUser = applicationUser;
+        this.coworkingSpace = coworkingSpace;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.status = status;
+    }
+
     public Long getId() {
         return id;
     }

@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
+import ch.zli.m223.model.ApplicationUser;
 import ch.zli.m223.model.Category;
 import ch.zli.m223.model.Entry;
 import ch.zli.m223.model.Tag;
@@ -25,6 +26,11 @@ public class TestDataService {
 
   @Transactional
   void generateTestData(@Observes StartupEvent event) {
+    // ApplicationUsers
+    var applicationUserMaxWeber = new ApplicationUser();  
+    
+    
+    
     // Categories
     var projectACategory = new Category();
     projectACategory.setTitle("Project A");
