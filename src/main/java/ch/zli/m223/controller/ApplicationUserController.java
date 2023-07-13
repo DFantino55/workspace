@@ -40,6 +40,7 @@ public class ApplicationUserController {
       return userService.findAll();
   }
 
+  // Registrierung Mitglieder
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)

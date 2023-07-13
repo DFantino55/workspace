@@ -23,6 +23,7 @@ public class SessionController {
   @Inject
   SessionService sessionService;
 
+  // Anmeldung Mitglieder/Administrator
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
   @Operation(summary = "Authenticate a user.", description = "Returns a token upon successful authentication.")
