@@ -1,6 +1,7 @@
 package ch.zli.m223.model;
 
 import java.util.Set;
+import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
