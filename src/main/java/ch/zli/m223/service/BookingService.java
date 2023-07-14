@@ -31,8 +31,27 @@ public class BookingService {
         return entityManager.merge(booking);
     }
 
+    @Transactional
+    public Booking acceptBooking(Long id) {
+        var booking = findByID(id);
+        booking.setStatus(1);
+        return entityManager.merge(booking);
+    }
+
+    @Transactional
+    public Booking rejectBooking(Long id) {
+        var booking = findByID(id);
+        booking.setStatus(2);
+        return entityManager.merge(booking);
+    }
+
     public List<Booking> findAll() {
         var query = entityManager.createQuery("FROM Booking", Booking.class);
         return query.getResultList();
+    }
+
+    public Booking findByID(Long id) {
+        var entity = entityManager.find(Booking.class, id);
+        return entity;
     }
 }

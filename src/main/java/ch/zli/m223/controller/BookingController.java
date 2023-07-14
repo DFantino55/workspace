@@ -28,6 +28,16 @@ public class BookingController {
     @Inject
     BookingService bookingService;
 
+    @Path("/{id}")
+    @GET
+    @Operation(
+        summary = "Gets Booking by ID",
+        description = "Gets a specific Booking by its ID"
+    )
+    public Booking get(@PathParam("id") Long id) {
+        return bookingService.findByID(id);
+    }
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(
@@ -68,5 +78,25 @@ public class BookingController {
     public Booking update(@PathParam("id") Long id, Booking booking) {
         return bookingService.updateBooking(id, booking);
     }
+
+    @Path("accept/{id}")
+    @PUT
+    @Operation(
+        summary = "Accept a booking.",
+        description = "Accepts a booking by its id."
+    )
+    public Booking acceptBooking(@PathParam("id") Long id) {
+        return bookingService.acceptBooking(id);
+    } 
+
+    @Path("reject/{id}")
+    @PUT
+    @Operation(
+        summary = "Reject a booking.",
+        description = "Rejects a booking by its id."
+    )
+    public Booking rejectBooking(@PathParam("id") Long id) {
+        return bookingService.rejectBooking(id);
+    } 
 
 }
