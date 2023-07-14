@@ -1,0 +1,140 @@
+{
+    "info": {
+        "_postman_id": "5fcaf07c-ee45-4083-a501-2f8fd8614ddf",
+        "name": "(17) Verwaltung der Buchungen",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Accept Booking",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/accept/1",
+                    "path": [
+                        "bookings",
+                        "accept",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Reject Booking",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/reject/1",
+                    "path": [
+                        "bookings",
+                        "reject",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Buchung bearbeiten",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/1",
+                    "path": [
+                        "bookings",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"applicationUser\": {\n    \"firstName\": \"Max\",\n    \"lastName\": \"Weber\",\n    \"email\": \"Max.Weber@gmail.ch\",\n    \"username\": \"mWeber\",\n    \"password\": \"123456789\",\n    \"id\": 1\n  },\n  \"coworkingSpace\": {\n    \"name\": \"TheWarRoom\",\n    \"location\": \"Bukarest\",\n    \"id\": 1\n  },\n  \"startDate\": \"2023-07-12T13:00:00\",\n  \"endDate\": \"2024-07-12T13:00:00\",\n  \"status\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "Buchung löschen",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/3",
+                    "path": [
+                        "bookings",
+                        "3"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Buchungen abfragen",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/bookings",
+                    "path": [
+                        "bookings"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        }
+    ]
+}

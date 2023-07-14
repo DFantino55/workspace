@@ -1,0 +1,116 @@
+{
+    "info": {
+        "_postman_id": "4a736117-a202-41b0-9ce7-062ea1672cc3",
+        "name": "(18) Verwaltung von Mitgliedern",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Mitglieder abfragen",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/users",
+                    "path": [
+                        "users"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Mitglieder bearbeiten",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8080/users/4",
+                    "path": [
+                        "users",
+                        "4"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"firstName\": \"Ertan\",\n  \"lastName\": \"Dogan\",\n  \"email\": \"ertan@Dogan.ch\",\n  \"username\": \"eDogan\",\n  \"password\": \"8155\",\n  \"status\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "Mitglieder löschen",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/users/4",
+                    "path": [
+                        "users",
+                        "4"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Registrieren Mitglieder/Administrator",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8080/users",
+                    "path": [
+                        "users"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"firstName\": \"Ertan\",\n  \"lastName\": \"Dogan\",\n  \"email\": \"ertan@Dogan.ch\",\n  \"username\": \"eDogan\",\n  \"password\": \"8155\",\n  \"status\": 0\n}"
+                }
+            }
+        }
+    ]
+}

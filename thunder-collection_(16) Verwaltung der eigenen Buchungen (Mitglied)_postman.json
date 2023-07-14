@@ -1,0 +1,123 @@
+{
+    "info": {
+        "_postman_id": "38ccfbdc-2e16-4285-866e-7433a057ba04",
+        "name": "(16) Verwaltung der eigenen Buchungen (Mitglied)",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Buchungsanfrage senden",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8080/bookings",
+                    "path": [
+                        "bookings"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMjQ5OTUsImV4cCI6MTY4OTM2ODE5NSwianRpIjoiNjUwOTQzYzctOGI5NC00ZmNjLWI0MGUtYjg2MTdlMzUyM2ExIn0.tlozLdepe4-Xfd8BXUBg2ylDlepan1O9k4Nxp5_03ZSciBBNF5tqgY2IOuWDjwoHVa9XDJvuagDvWq7bRzy5ZRfdzmEXO7Xk2fzdVZ_uRx8TVsVFZX0ywHECL4zYhFb_5YlZZnDvtwyeyME6JmgRc1xgXx67axZa_9HSHmuMB4Rn3sxtRnixGbXLVHXe4NJcCph4hrkpGNNbLtu8QdinqDP21EP7LpKg1eipHuFcMqoEOCQYida_qNvIN4MSbYufFAZVn89nHTUNN2nzOaCmqwqthw0WsIOmToyPXQGOjo0VMbuZwd_tzR3nUKCytcNsUgw-IoC2sovA3WA2YGdi3Q"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"applicationUser\": {\n    \"firstName\": \"Max\",\n    \"lastName\": \"Weber\",\n    \"email\": \"Max.Weber@gmail.ch\",\n    \"username\": \"mWeber\",\n    \"password\": \"123456789\",\n    \"id\": 1\n  },\n  \"coworkingSpace\": {\n    \"name\": \"TheWarRoom\",\n    \"location\": \"Bukarest\",\n    \"id\": 1\n  },\n  \"startDate\": \"2023-07-12T13:00:00\",\n  \"endDate\": \"2023-07-12T13:00:00\",\n  \"status\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "Buchung bearbeiten",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/1",
+                    "path": [
+                        "bookings",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"applicationUser\": {\n    \"firstName\": \"Max\",\n    \"lastName\": \"Weber\",\n    \"email\": \"Max.Weber@gmail.ch\",\n    \"username\": \"mWeber\",\n    \"password\": \"123456789\",\n    \"id\": 1\n  },\n  \"coworkingSpace\": {\n    \"name\": \"TheWarRoom\",\n    \"location\": \"Bukarest\",\n    \"id\": 1\n  },\n  \"startDate\": \"2023-07-12T13:00:00\",\n  \"endDate\": \"2024-07-12T13:00:00\",\n  \"status\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "Buchung stornieren",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/3",
+                    "path": [
+                        "bookings",
+                        "3"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Verfügbarkeit prüfen",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/bookings/1",
+                    "path": [
+                        "bookings",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL3psaS5leGFtcGxlLmNvbS8iLCJ1cG4iOiJNYXguV2ViZXJAZ21haWwuY29tIiwiZ3JvdXBzIjpbIlVzZXIiLCJBZG1pbiJdLCJpYXQiOjE2ODkzMTYyOTIsImV4cCI6MTY4OTM1OTQ5MiwianRpIjoiZmJhYTc2MjUtODY3Ny00MmZiLWFjMzItNjc3OTk4YWE0M2IwIn0.pEZX-wM-QSRPS7h0QTHOAl6T_rPcqiDjoa4jYHyHG6RHBub0gm0uRe73ZkZZJ0fmkb289L92MVCxuH_xxMj5T8fPoTDNhUMNKb3mQNh2mDj8rh6LgwoF_TUINfinLx0MnpGDWuO86NZRRgddFPgOVYfirF7sCYldIZVPKghTBm3MLosBeINZWB0PpthzPzHt3_h0IVVb1ok8v4wF0BaohxmAQOYqks3Vo-NwffTaBAvBqqBm6tT7_QLZOzSy6xsbydh08_lDBkOAOP01JZ_b-pGlitdBYhSngelrSA_rKjjBYcGRjvKjU9H8Xx80pfSHgzbJz5rC4G78mm_NtAsdHQ"
+                    }
+                ]
+            }
+        }
+    ]
+}

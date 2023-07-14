@@ -1,0 +1,62 @@
+{
+    "info": {
+        "_postman_id": "6dd5dc08-0643-4a54-b22c-a1b297b49330",
+        "name": "(15) Registrierung, Authenzifizierung",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Registrieren Mitglieder/Administrator",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8080/users",
+                    "path": [
+                        "users"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"firstName\": \"Ertan\",\n  \"lastName\": \"Dogan\",\n  \"email\": \"ertan@Dogan.ch\",\n  \"username\": \"eDogan\",\n  \"password\": \"8155\",\n  \"status\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "Anmeldung Mitglieder",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8080/session",
+                    "path": [
+                        "session"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"email\": \"Max.Weber@gmail.com\",\n  \"password\": \"123456789\"\n}"
+                }
+            }
+        }
+    ]
+}
