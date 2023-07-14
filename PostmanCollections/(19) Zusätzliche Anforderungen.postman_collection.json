@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "9aea0bd0-9cdf-4728-beed-bd700c404c6c",
+		"name": "(19) Zusätzliche Anforderungen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28535402"
+	},
+	"item": [
+		{
+			"name": "Verfügbarkeit prüfen",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(",
+							"    {",
+							"        url:'http://localhost:8080/session',",
+							"        method:'POST',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({",
+							"                email: 'Markus.Mueller@gmail.com',",
+							"                password:'2004'",
+							"            })",
+							"        },",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, (err, response) => {",
+							"        if (err) {",
+							"            console.error(err);",
+							"            returm;",
+							"        }",
+							"        const token = response.headers.get('Authorization');",
+							"        pm.request.headers.add({",
+							"            key: 'Authorization',",
+							"            value: token",
+							"        });",
+							"    }",
+							");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

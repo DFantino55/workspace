@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "0ec251d0-316b-4de6-a77d-1f090bc9b7a7",
+		"name": "(17) Verwaltung der Buchungen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28535402"
+	},
+	"item": [
+		{
+			"name": "Accept Booking",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(",
+							"    {",
+							"        url:'http://localhost:8080/session',",
+							"        method:'POST',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({",
+							"                email: 'Markus.Mueller@gmail.com',",
+							"                password:'2004'",
+							"            })",
+							"        },",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, (err, response) => {",
+							"        if (err) {",
+							"            console.error(err);",
+							"            returm;",
+							"        }",
+							"        const token = response.headers.get('Authorization');",
+							"        pm.request.headers.add({",
+							"            key: 'Authorization',",
+							"            value: token",
+							"        });",
+							"    }",
+							");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/accept/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"accept",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Booking",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(",
+							"    {",
+							"        url:'http://localhost:8080/session',",
+							"        method:'POST',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({",
+							"                email: 'Markus.Mueller@gmail.com',",
+							"                password:'2004'",
+							"            })",
+							"        },",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, (err, response) => {",
+							"        if (err) {",
+							"            console.error(err);",
+							"            returm;",
+							"        }",
+							"        const token = response.headers.get('Authorization');",
+							"        pm.request.headers.add({",
+							"            key: 'Authorization',",
+							"            value: token",
+							"        });",
+							"    }",
+							");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/reject/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"reject",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buchung bearbeiten",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(",
+							"    {",
+							"        url:'http://localhost:8080/session',",
+							"        method:'POST',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({",
+							"                email: 'Markus.Mueller@gmail.com',",
+							"                password:'2004'",
+							"            })",
+							"        },",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, (err, response) => {",
+							"        if (err) {",
+							"            console.error(err);",
+							"            returm;",
+							"        }",
+							"        const token = response.headers.get('Authorization');",
+							"        pm.request.headers.add({",
+							"            key: 'Authorization',",
+							"            value: token",
+							"        });",
+							"    }",
+							");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"applicationUser\": {\n    \"firstName\": \"Max\",\n    \"lastName\": \"Weber\",\n    \"email\": \"Max.Weber@gmail.ch\",\n    \"username\": \"mWeber\",\n    \"password\": \"123456789\",\n    \"id\": 1\n  },\n  \"coworkingSpace\": {\n    \"name\": \"TheWarRoom\",\n    \"location\": \"Bukarest\",\n    \"id\": 1\n  },\n  \"startDate\": \"2023-07-12T13:00:00\",\n  \"endDate\": \"2024-07-12T13:00:00\",\n  \"status\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buchung löschen",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(",
+							"    {",
+							"        url:'http://localhost:8080/session',",
+							"        method:'POST',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({",
+							"                email: 'Markus.Mueller@gmail.com',",
+							"                password:'2004'",
+							"            })",
+							"        },",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, (err, response) => {",
+							"        if (err) {",
+							"            console.error(err);",
+							"            returm;",
+							"        }",
+							"        const token = response.headers.get('Authorization');",
+							"        pm.request.headers.add({",
+							"            key: 'Authorization',",
+							"            value: token",
+							"        });",
+							"    }",
+							");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buchungen abfragen",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(",
+							"    {",
+							"        url:'http://localhost:8080/session',",
+							"        method:'POST',",
+							"        body: {",
+							"            mode: 'raw',",
+							"            raw: JSON.stringify({",
+							"                email: 'Markus.Mueller@gmail.com',",
+							"                password:'2004'",
+							"            })",
+							"        },",
+							"        header: {",
+							"            'Content-Type': 'application/json'",
+							"        }",
+							"    }, (err, response) => {",
+							"        if (err) {",
+							"            console.error(err);",
+							"            returm;",
+							"        }",
+							"        const token = response.headers.get('Authorization');",
+							"        pm.request.headers.add({",
+							"            key: 'Authorization',",
+							"            value: token",
+							"        });",
+							"    }",
+							");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
